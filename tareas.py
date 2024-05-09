@@ -1,12 +1,17 @@
 tareas = []
 
-while True:
-    nombre_tarea = input("Ingrese el nombre de la tarea o 'x' para terminar: ")
-    if nombre_tarea.lower() == "x":
-        break
-    nueva_tarea = {"nombre de la tarea": nombre_tarea}
-    tareas.append(nueva_tarea)
-    print("Tarea agregada")
+
+tareas.insert(0, {"nombre": "Estudiar"})
+tareas.insert(1, {"nombre": "Limpiar"})
+tareas.insert(2, {"nombre": "Ordenar"})
+
+
+if tareas:
+    tarea_eliminada = tareas.pop()
+    print(f"Tarea eliminada: {tarea_eliminada['nombre']}")
+else:
+    print("No hay tareas para eliminar.")
+
 
 if not tareas:
     print("No hay tareas disponibles.")
